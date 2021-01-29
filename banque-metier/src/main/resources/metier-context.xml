@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="BanqueService"
+		class="fr.formation.m2.spring.banque.metier.BanqueServiceImpl">
+		<property name="userDAO" ref="userDAO"></property>
+		<property name="compteDAO" ref="compteDAO"></property>
+	</bean>
+	
+	<bean id="userDAO" class="fr.formation.m2.spring.banque.bdd.dao.HibernateUserDAO"/> 
+	<bean id="compteDAO" class="fr.formation.m2.spring.banque.bdd.dao.HibernateCompteDAO"/> 
+</beans>
